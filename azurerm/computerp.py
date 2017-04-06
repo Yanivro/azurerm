@@ -473,7 +473,7 @@ def poweroff_vmss_vms(access_token, subscription_id, resource_group, vmss_name, 
                         '/resourceGroups/', resource_group,
                         '/providers/Microsoft.Compute/virtualMachineScaleSets/', vmss_name,
                         '/powerOff?api-version=', COMP_API])
-    body = '{"instanceIds" : ' + instance_ids + '}'
+    body = '{"instanceIds" : [' + instance_ids + ']}'
     return do_post(endpoint, body, access_token)
 
 
@@ -485,7 +485,7 @@ def reimage_vmss_vms(access_token, subscription_id, resource_group, vmss_name, i
                         '/resourceGroups/', resource_group,
                         '/providers/Microsoft.Compute/virtualMachineScaleSets/', vmss_name,
                         '/reimage?api-version=', COMP_API])
-    body = '{"instanceIds" : ' + instance_ids + '}'
+    body = '{"instanceIds" : [' + instance_ids + ']}'
     return do_post(endpoint, body, access_token)
 
 
@@ -522,7 +522,7 @@ def restart_vmss_vms(access_token, subscription_id, resource_group, vmss_name, i
                         '/resourceGroups/', resource_group,
                         '/providers/Microsoft.Compute/virtualMachineScaleSets/', vmss_name,
                         '/restart?api-version=', COMP_API])
-    body = '{"instanceIds" : ' + instance_ids + '}'
+    body = '{"instanceIds" : [' + instance_ids + ']}'
     return do_post(endpoint, body, access_token)
 
 
@@ -571,7 +571,7 @@ def start_vmss_vms(access_token, subscription_id, resource_group, vmss_name, ins
                         '/resourceGroups/', resource_group,
                         '/providers/Microsoft.Compute/virtualMachineScaleSets/', vmss_name,
                         '/start?api-version=', COMP_API])
-    body = '{"instanceIds" : ' + instance_ids + '}'
+    body = '{"instanceIds" : [' + instance_ids + ']}'
     return do_post(endpoint, body, access_token)
 
 
@@ -595,7 +595,7 @@ def stopdealloc_vmss_vms(access_token, subscription_id, resource_group, vmss_nam
                         '/resourceGroups/', resource_group,
                         '/providers/Microsoft.Compute/virtualMachineScaleSets/', vmss_name,
                         '/deallocate?api-version=', COMP_API])
-    body = '{"instanceIds" : ' + instance_ids + '}'
+    body = '{"instanceIds" : [' + instance_ids + ']}'
     return do_post(endpoint, body, access_token)
 
 
@@ -642,5 +642,5 @@ def upgrade_vmss_vms(access_token, subscription_id, resource_group, vmss_name, i
                         '/resourceGroups/', resource_group,
                         '/providers/Microsoft.Compute/virtualMachineScaleSets/', vmss_name,
                         '/manualupgrade?api-version=', COMP_API])
-    body = '{"instanceIds" : ' + instance_ids + '}'
+    body = '{"instanceIds" : [' + instance_ids + ']}'
     return do_post(endpoint, body, access_token)
